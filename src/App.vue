@@ -1,6 +1,6 @@
 <template>
-  <div>
-    
+  <div id="app">
+    <router-view />
   </div>
 </template>
 
@@ -8,6 +8,8 @@
 
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+#app{
+  display: none;
+}
 </style>
