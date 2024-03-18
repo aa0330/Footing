@@ -9,8 +9,9 @@ export default defineConfig({
     port:3001,
     open:'/'
   },
-
+  
   plugins: [vue()],
+
   resolve:{
     alias:{
       '@': resolve(__dirname, 'src') // 路径别名
