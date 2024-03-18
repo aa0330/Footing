@@ -11,7 +11,8 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: () => import('@/pages/login/index.vue')
-    }
+    },
+   
 ]
 
 const router = createRouter({
@@ -20,15 +21,13 @@ const router = createRouter({
 })
 
 // 路由守卫        
-// router.beforeEach((to, from, next) => {
-//     console.log('to==>',to);
-//     if (whiteList.includes(to.path) && isAuth) {
-//         next()
-//     } else {
-//         next({ name: 'Login' })
-//     }
-
-// })
+router.beforeEach((to, from, next) => {
+    if (!(whiteList.includes(to.path) | isAuth())) {
+        next('/login')
+    } else {
+        next()
+    }
+})
 
 
 export default router;
