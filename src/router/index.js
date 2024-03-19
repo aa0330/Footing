@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { isAuth } from '@/util/auth'
-import { whiteList } from "@/util/whiteList";
+import { whiteList } from "@/store/public_data/index";
 
 const routes = [
     {
@@ -12,7 +12,11 @@ const routes = [
         name: 'Login',
         component: () => import('@/pages/login/index.vue')
     },
-   
+    {
+        path: '/test',
+        component: () => import('@/components/info_box/index.vue')
+    }
+
 ]
 
 const router = createRouter({

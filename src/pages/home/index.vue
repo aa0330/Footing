@@ -50,22 +50,27 @@
       </ul>
 
       <div class="center_container">
-          
+
       </div>
       <div class="right_container">
 
       </div>
 
     </div>
-    
-    <div>
 
+    <div class="main_box">
+      <Infobox :itemData="{
+        title: '路由'
+      }" />
+     
     </div>
 
   </div>
 </template>
 
 <script setup>
+import Infobox from '@/components/info_box/index.vue';
+
 
 </script>
 
@@ -131,5 +136,14 @@
       animation: rotatei 1s linear;
     }
   }
+
+  .main_box {
+    margin: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+  }
+
 }
 </style>
