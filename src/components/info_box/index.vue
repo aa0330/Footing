@@ -248,5 +248,4 @@ let imgUrl_1 = ref(imgurl || itemData.imgurl || DefaultImgUrl)
         opacity: 1;
     }
 }
-
 </style>
