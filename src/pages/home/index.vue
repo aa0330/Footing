@@ -62,15 +62,78 @@
       <Infobox :itemData="{
         title: '路由'
       }" />
-     
     </div>
+    <div class="computed_box" style="margin-top: 20px; margin-left: 500px;">
+      <div>
+        <input placeholder="搜索" type="text">
+      </div>
+
+      <div style="margin-top: 30px;">
+
+        <table border width="600" cellpadding="0" cellspacing="0">
+          <thead>
+            <tr>每日休闲时长记录</tr>
+            <tr>
+              <th>游戏名称</th>
+              <th>游戏时长（min）</th>
+              <th>次数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in data" :key="item.index">
+              <td>{{ item.name }}</td>
+              <td>{{ item.duration }}</td>
+              <td>{{ item.time }}</td>
+            </tr>
+            <tr>总计时长{{ total }}</tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
 
   </div>
 </template>
 
 <script setup>
+import { computed, reactive } from 'vue';
 import Infobox from '@/components/info_box/index.vue';
 
+let data = reactive([
+  {
+    'name': '云顶之弈',
+    duration: 40,
+    time: 3,
+    index: '1'
+  }, {
+    'name': '无畏契约',
+    duration: 10,
+    time: 17,
+    index: 2
+  }, {
+    'name': '部落冲突',
+    duration: 10,
+    time: 30,
+    index: 3
+  }, {
+    'name': '抖音',
+    duration: 60,
+    time: 4,
+    index: 3
+  }
+])
+
+
+let total = computed(() => {
+  let total_time = 0;
+  data.forEach(item => {
+    total_time += item.duration * item.time;
+  })
+  total_time = total_time / 60
+  console.log('total_time',total_time);
+
+})
 
 </script>
 
