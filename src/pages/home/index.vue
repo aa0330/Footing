@@ -48,6 +48,7 @@
         <li>文章</li>
         <li>番外</li>
         <li @click="goComputed">计算属性</li>
+        <li @click="goPinia">Pinia</li>
       </ul>
 
       <div class="center_container">
@@ -74,6 +75,9 @@ const router = useRouter()
 
 const goComputed = () => {
   router.push('/computed')
+}
+function goPinia() {
+  router.push('/pinia')
 }
 
 </script>

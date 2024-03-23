@@ -23,7 +23,7 @@ const routes = [
             {
                 path: '/mixtureA',
                 name: 'A',
-                components: {
+                components: {                                               //  命名视图
                     bigA: () => import('@/pages/A/index.vue'),
                     smalla: () => import('@/pages/A/a.vue'),
                     default: () => import('@/pages/A/middleaA.vue')
@@ -35,7 +35,11 @@ const routes = [
                 component: () => import('@/pages/B/index.vue')
             },
         ]
-    },
+    }, {
+        path: '/pinia',
+        name: 'pinia',
+        component: () => import('@/pages/pinia/index.vue')
+    }
 ]
 
 const router = createRouter({
