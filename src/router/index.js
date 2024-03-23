@@ -15,8 +15,23 @@ const routes = [
     {
         path: '/test',
         component: () => import('@/components/info_box/index.vue')
-    }
-
+    }, {
+        path: '/components',
+        name: 'Components_route',
+        component: () => import('@/pages/computed/index.vue'),
+        children: [
+            {
+                path: '/a',
+                name: 'A',
+                component: () => import('@/pages/A')
+            },
+            {
+                path: '/b',
+                name: 'B',
+                component: () => import('@/pages/B')
+            },
+        ]
+    },
 ]
 
 const router = createRouter({
