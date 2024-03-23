@@ -16,19 +16,23 @@ const routes = [
         path: '/test',
         component: () => import('@/components/info_box/index.vue')
     }, {
-        path: '/components',
+        path: '/computed',
         name: 'Components_route',
         component: () => import('@/pages/computed/index.vue'),
         children: [
             {
-                path: '/a',
+                path: '/mixtureA',
                 name: 'A',
-                component: () => import('@/pages/A')
+                components: {
+                    bigA: () => import('@/pages/A/index.vue'),
+                    smalla: () => import('@/pages/A/a.vue'),
+                    default: () => import('@/pages/A/middleaA.vue')
+                }
             },
             {
                 path: '/b',
                 name: 'B',
-                component: () => import('@/pages/B')
+                component: () => import('@/pages/B/index.vue')
             },
         ]
     },

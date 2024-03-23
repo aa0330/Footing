@@ -1,4 +1,5 @@
 <template>
+    <h1>coumputed & router</h1>
     <div class="computed_box" style="margin-top: 20px; margin-left: 500px;">
         <div>
             <input placeholder="搜索" type="text">
@@ -34,15 +35,26 @@
 
         </div>
     </div>
-
+    <hr>
+    <button @click="changeRouter1" style="margin-left: 80px; border-color: aquamarine;">点击显示命名视图</button>
+    <hr>
+    <button @click="changeRouter2" style="margin-left: 80px">goBack</button>
+    <button @click="() => { router.forward() }" style="margin-left: 80px">goforword</button>
+    <hr>
     <div class="a_b">
-        
+        <router-view name="bigA" />
+        <router-view />
+        <router-view name="smalla" />
     </div>
+    <p></p>
 
 </template>
 
 <script setup>
 import { computed, reactive, readonly } from 'vue';
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 let data = reactive([
     {
@@ -114,6 +126,15 @@ function decrement(item) {
         }
     })
 }
+
+function changeRouter1() {
+    router.push('/mixtureA')
+}
+function changeRouter2() {
+    console.log(router);
+    router.go(-1)
+}
+
 </script>
 
 <style scoped>

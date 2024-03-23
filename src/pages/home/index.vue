@@ -63,8 +63,6 @@
 
     </div>
 
-
-
   </div>
 </template>
 
@@ -75,7 +73,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const goComputed = () => {
-  router.replace('/components')
+  router.push('/computed')
 }
 
 </script>

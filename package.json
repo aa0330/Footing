@@ -13,6 +13,7 @@
     "axios": "^1.6.8",
     "element-plus": "^2.6.1",
     "less-loader": "^12.2.0",
+    "pinia": "^2.1.7",
     "unplugin-icons": "^0.18.5",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
