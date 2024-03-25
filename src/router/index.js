@@ -39,6 +39,14 @@ const routes = [
         path: '/pinia',
         name: 'pinia',
         component: () => import('@/pages/pinia/index.vue')
+    }, {
+        path: '/watch',
+        name: 'watch',
+        component: () => import('@/pages/watch/index.vue')
+    }, {
+        path: '/inject',
+        name: 'inject',
+        component: () => import('@/pages/inject/index.vue')
     }
 ]
 

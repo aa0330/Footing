@@ -47,8 +47,9 @@
         <li>首页</li>
         <li>文章</li>
         <li>番外</li>
-        <li @click="goComputed">计算属性</li>
-        <li @click="goPinia">Pinia</li>
+        <li @click="() => { router.push('/computed') }">计算属性</li>
+        <li @click="() => { router.push('/pinia') }">Pinia</li>
+        <li @click="() => { router.push('/watch') }">watch</li>
       </ul>
 
       <div class="center_container">
@@ -60,24 +61,41 @@
 
     </div>
 
-    <div class="main_box">
-
+    <div class="main_box" style="margin: 80px;">
+      <input ref="inputText" type="text" @input="inputFn" />
+      <div ref="showText"></div>
     </div>
 
   </div>
 </template>
-
 <script setup>
 import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router';
 
 const router = useRouter()
 
-const goComputed = () => {
-  router.push('/computed')
+let inputText = ref();
+let showText = ref()
+
+function showInfo() {
+  console.log('执行！！！');
+  showText.value.innerHTML = inputText.value.value
 }
-function goPinia() {
-  router.push('/pinia')
+
+function debounce(func, delay) {
+  let timer = null;
+  return function (...args) {
+    if (timer != null) clearTimeout(timer);
+    timer = setTimeout(function () {
+      func.apply(this, args)
+    }, delay);
+  }
+}
+
+debounce(showInfo, 1500)()
+
+const inputFn = () => {
+  showText.value.innerHTML = 'waitting'
 }
 
 </script>

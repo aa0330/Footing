@@ -4,9 +4,10 @@
             # createPinia() 用于创建pinia实例，将pinia挂载到app
             # defineStore() 用于创建store实例 
             # storesToRef() 用于修复解构时会失去响应式
-            # $reset() optionsApi可调用此方法进行store初始化 
-            # $patch() 用于修改state的值
-            # $subscribe()  当state的值发生变化时会触发该回到函数
+            # $reset() optionsApi可调用此方法进行store初始化 在option Api风格中生效, composition API中要自己去配置 $reset方法并同意返回
+            # $patch() 用于修改state的值    
+            # $subscribe()  当state的值发生变化时会触发对应的回调函数
+
 
         类型：
             options Store:
@@ -30,7 +31,7 @@
         --注意点：
             解构的话会失去响应式，可以通过storesToRef
             actions 支持同步和异步 async  await
-             
+                    
             
 
     pinia持久化
@@ -40,9 +41,7 @@
         作用：
             例如：游客数量的记录，访问次数
 
-
     使用插件 pinia-plugin-persistedstate
-
 
 */
 import { createPinia } from "pinia";
