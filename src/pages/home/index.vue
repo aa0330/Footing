@@ -51,6 +51,7 @@
         <li @click="() => { router.push('/pinia') }">Pinia</li>
         <li @click="() => { router.push('/watch') }">watch</li>
         <li @click="() => { router.push('/inject') }">inject</li>
+        <li @click="() => { router.push('/interview') }">interview</li>
       </ul>
 
       <div class="center_container">

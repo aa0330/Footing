@@ -47,6 +47,10 @@ const routes = [
         path: '/inject',
         name: 'inject',
         component: () => import('@/pages/inject/index.vue')
+    }, {
+        path: '/interview',
+        name: 'interview',
+        component: () => import('@/pages/interview/index.vue')
     }
 ]
 
