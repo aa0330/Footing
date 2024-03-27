@@ -50,6 +50,7 @@
         <li @click="() => { router.push('/computed') }">计算属性</li>
         <li @click="() => { router.push('/pinia') }">Pinia</li>
         <li @click="() => { router.push('/watch') }">watch</li>
+        <li @click="() => { router.push('/inject') }">inject</li>
       </ul>
 
       <div class="center_container">
