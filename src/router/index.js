@@ -51,6 +51,10 @@ const routes = [
         path: '/interview',
         name: 'interview',
         component: () => import('@/pages/interview/index.vue')
+    }, {
+        path: '/dynamic_com',
+        name: 'dynamic_com',
+        component: () => import('@/pages/dynamic_com/index.vue')
     }
 ]
 

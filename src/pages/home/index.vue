@@ -51,7 +51,8 @@
         <li @click="() => { router.push('/pinia') }">Pinia</li>
         <li @click="() => { router.push('/watch') }">watch</li>
         <li @click="() => { router.push('/inject') }">inject</li>
-        <li @click="() => { router.push('/interview') }">interview</li>
+        <li @click="() => { router.push('/interview') }">interview1</li>
+        <li @click="() => { router.push('/dynamic_com') }">dynamic_com</li>
       </ul>
 
       <div class="center_container">
@@ -67,6 +68,7 @@
       <input ref="inputText" type="text" @input="inputFn" />
       <div ref="showText"></div>
     </div>
+
 
   </div>
 </template>
@@ -84,6 +86,7 @@ function showInfo() {
   showText.value.innerHTML = inputText.value.value
 }
 
+
 function debounce(func, delay) {
   let timer = null;
   return function (...args) {
@@ -99,6 +102,8 @@ debounce(showInfo, 1500)()
 const inputFn = () => {
   showText.value.innerHTML = 'waitting'
 }
+
+
 
 </script>
 

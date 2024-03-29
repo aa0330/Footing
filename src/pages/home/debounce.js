@@ -1,7 +1,7 @@
 
 
 
-
+// 
 export function debounce(func, delay) {
   let timer = null;
   return function (...args) {
@@ -14,4 +14,7 @@ export function debounce(func, delay) {
 
 export function throttle() {
 
-} 
+
+}
+
+
