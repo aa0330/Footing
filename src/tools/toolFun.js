@@ -4,6 +4,8 @@
     防抖：每次调用前清除定时器，从而达到延时触发防止页面抖动的效果
         将timer放在闭包中,
 
+
+    节流： 
 */
 
 
@@ -22,10 +24,20 @@ function debounce(func, delay) {
     }
 }
 
+//  节流
+function throttle(func, limit) {
+    // 上次的事件
+    let previous = 0;
+    return function (...args) {
+        let now = Date.now()
+        let context = this
+        if ((now - previous) > limit) {
+            func.apply(context, args)
+            previous = now
+        }
 
-function throttle() {
-
+    }
 }
 
 
-export { debounce }
+export { debounce, throttle }

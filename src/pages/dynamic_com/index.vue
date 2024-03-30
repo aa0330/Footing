@@ -1,8 +1,10 @@
 <template>
+    <h1>此文章写了关于递归组件、动态组件、异步组件</h1>
     <div class="recursion_tree" style="margin-left: 50px;">
         <h2>递归组件</h2>
         <Tree :data="dataTree" />
     </div>
+    <hr>
     <div class="dynamic_com" style="margin-left: 50px;">
         <h2>动态组件</h2>
         <button @click="changeCom(Acom)">A组件</button>&nbsp;&nbsp;&nbsp;
@@ -10,24 +12,18 @@
         <button @click="changeCom(Ccom)">C组件</button>
         <component :is="comId"></component>
     </div>
-    
+    <hr>
     <div class="aysnc_com" style="margin-left: 50px;">
         <h2>异步组件 & 顶层await技术</h2>
-        <Suspense>
+        <suspense>
             <template #default>
-                <div v-if="loading">
-                    <el-skeleton :rows="5" animated />
-                </div>
-                <div else>
-                    加载成功
-                </div>
+                <AsyncComp />
             </template>
 
             <template #fallback>
-                <div>加载失败！</div>
+                <Ccom />
             </template>
-
-        </Suspense>
+        </suspense>
 
     </div>
 
@@ -35,7 +31,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, shallowRef, markRaw } from 'vue'
+import { ref, reactive, shallowRef, markRaw, defineAsyncComponent } from 'vue'
 import { axios } from '@/util/axios.js'
 import Tree from '@/components/recursion_tree/Tree_bulit.vue'
 import Acom from './Acom.vue'
@@ -89,8 +85,26 @@ let dataTree = [
     }
 ]
 
-// await axios.get('')
 
+1// await axios.get('')
+const AsyncComp = defineAsyncComponent(() => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(Bcom)
+        }, 2000)
+    })
+})
+// {
+//     delay: 200,
+//     loader: () => {
+//         return new Promise((resolve) => {
+//             resolve(() => import('./Acom.vue'))
+//         })
+//     },
+//     loadingComponent: () => import('./Acom.vue'),
+//     errorComponent: () => import('./error.vue'),
+//     timeout: 3000
+// }
 
 
 
