@@ -45,7 +45,7 @@
           </svg>
         </li>
         <li>首页</li>
-        <li>文章</li>
+        <li @click="() => { router.push('/article') }">文章</li>
         <li>番外</li>
         <li @click="() => { router.push('/computed') }">计算属性</li>
         <li @click="() => { router.push('/pinia') }">Pinia</li>

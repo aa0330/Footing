@@ -38,7 +38,10 @@ import Acom from './Acom.vue'
 import Bcom from './Bcom.vue'
 import Ccom from './Ccom.vue'
 
-let comId = shallowRef(Acom)
+let comId = shallowRef(Acom);
+
+debugger
+
 const comData = reactive([
     {
         name: 'A组件',
