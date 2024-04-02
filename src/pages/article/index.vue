@@ -2,13 +2,11 @@
 该网页用于写一下常见好用的方法
 
 
-
-
-
  -->
 
 <template>
   <div class="container">
+    动态组件实现Tab页功能，默认打开第一个组件
     <el-row>
       <el-col :span="2">
         <button @click="changeCom('sortCom')">Arr.sort</button>
@@ -25,7 +23,6 @@
       <el-col :span="2">
         <button @click="changeCom('assignCom')">Object.assign</button>
       </el-col>
-
 
       <el-col :span="2">
         <button @click="changeCom('summaryCom')">summary</button>

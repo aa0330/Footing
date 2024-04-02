@@ -65,7 +65,7 @@
     </div>
 
     <div class="main_box" style="margin: 80px;">
-      <input ref="inputText" type="text" @input="inputFn" />
+      <p></p>
       <div ref="showText"></div>
     </div>
 
@@ -97,11 +97,8 @@ function debounce(func, delay) {
   }
 }
 
-debounce(showInfo, 1500)()
 
-const inputFn = () => {
-  showText.value.innerHTML = 'waitting'
-}
+
 
 
 
