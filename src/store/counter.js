@@ -20,7 +20,7 @@ export const useCounterState = defineStore(Names.COUNTER, () => {
     let info = reactive({
         name: '花未闻',
         user: '王池',
-        password: '1'
+        password: '2'
     })
 
     let infoAd = computed(() => {
