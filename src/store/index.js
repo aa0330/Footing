@@ -19,7 +19,6 @@
 
                 # 支持使用$reset去初始化store对象
 
-
             composition Store ( setup语法糖 ):
 
                 # ref()、active 相当于 state                
