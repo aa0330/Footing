@@ -56,6 +56,9 @@ const routes = [
         name: 'dynamic_com',
         component: () => import('@/pages/dynamic_com/index.vue')
     }, {
+
+
+        
         path: '/article',
         name: 'article',
         component: () => import('@/pages/article/index.vue')
