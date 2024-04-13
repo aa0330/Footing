@@ -15,7 +15,12 @@ const routes = [
     {
         path: '/test',
         component: () => import('@/components/info_box/index.vue')
-    }, {
+    }, 
+    {
+        path: '/game',
+        component: () => import('@/pages/games/index.vue')
+    },
+    {
         path: '/computed',
         name: 'Components_route',
         component: () => import('@/pages/computed/index.vue'),

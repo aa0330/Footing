@@ -40,7 +40,6 @@ import Ccom from './Ccom.vue'
 
 let comId = shallowRef(Acom);
 
-debugger
 
 const comData = reactive([
     {

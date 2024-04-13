@@ -47,6 +47,7 @@
         <li>首页</li>
         <li @click="() => { router.push('/article') }">文章</li>
         <li>番外</li>
+        <li @click="() => { router.push('/game') }">游戏</li>
         <li @click="() => { router.push('/computed') }">计算属性</li>
         <li @click="() => { router.push('/pinia') }">Pinia</li>
         <li @click="() => { router.push('/watch') }">watch</li>

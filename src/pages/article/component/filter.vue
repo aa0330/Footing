@@ -8,7 +8,7 @@
     <input type="number" v-model="max">&nbsp;
     <el-button type="primary" @click="redomMN">点击随机生成 {{ min }}-{{ max }}的数字</el-button>
     <h1>{{ redomNum }}</h1>
-  </div>
+  </div>  
 </template>
 
 <script setup>
