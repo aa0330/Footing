@@ -10,9 +10,9 @@
         </div>
         <div class="startBtn">开始</div>
     </div>
-    <div class="fireworks"><img src="./images/fireworks.png" /></div>
-    <div class="fireworks"><img src="./images/fireworks.png" /></div>
-    <div class="fireworks"><img src="./images/fireworks.png" /></div>
+    <div class="fireworks"><img src="./image/fireworks.png" /></div>
+    <div class="fireworks"><img src="./image/fireworks.png" /></div>
+    <div class="fireworks"><img src="./image/fireworks.png" /></div>
     <input type="hidden" id="random1" />
     <input type="hidden" id="random2" />
     <input type="hidden" id="random3" />
@@ -36,15 +36,11 @@ const sevenFirst = ref()
 const sevenSecond = ref()
 const sevenThird = ref()
 
-console.log('textPanel',textPanel);
-onMounted(() => {
-    
-}),
 
 // 获取DOM元素对象
-// const sevenFirst = document.getElementById("sevenFirst"); // 第一列图片容器
-// const sevenSecond = document.getElementById("sevenSecond"); // 第二列图片容器
-// const sevenThird = document.getElementById("sevenThird"); // 第三列图片容器
+// const sevenFirst = document.getElementById("sevenFirst"); 
+// const sevenSecond = document.getElementById("sevenSecond");
+// const sevenThird = document.getElementById("sevenThird"); 
 const random1 = document.getElementById("random1");
 const random2 = document.getElementById("random2");
 const random3 = document.getElementById("random3");
@@ -78,8 +74,8 @@ class Game {
                 path +
                 '"></li>';
         }
-        sevenFirst.style.height = this.heightPic * this.FirstRandom + "px";
-        sevenFirst.style.marginTop =
+        sevenFirst.vlaue.style.height = this.heightPic * this.FirstRandom + "px";
+        sevenFirst.value.style.marginTop =
             -(this.heightPic * this.FirstRandom - this.heightPic) + "px";
         // 第二列
         for (let i = 0; i < this.SecondRandom; i++) {
@@ -94,8 +90,8 @@ class Game {
                 path +
                 '"></li>';
         }
-        sevenSecond.style.height = this.heightPic * this.SecondRandom + "px";
-        sevenSecond.style.marginTop =
+        sevenSecond.vlaue.style.height = this.heightPic * this.SecondRandom + "px";
+        sevenSecond.vlaue.style.marginTop =
             -(this.heightPic * this.SecondRandom - this.heightPic) + "px";
         // 第三列
         for (let i = 0; i < this.ThirdRandom; i++) {
@@ -110,8 +106,8 @@ class Game {
                 path +
                 '"></li>';
         }
-        sevenThird.style.height = this.heightPic * this.ThirdRandom + "px";
-        sevenThird.style.marginTop =
+        sevenThird.vlaue.style.height = this.heightPic * this.ThirdRandom + "px";
+        sevenThird.vlaue.style.marginTop =
             -(this.heightPic * this.ThirdRandom - this.heightPic) + "px";
     }
     // 随机数

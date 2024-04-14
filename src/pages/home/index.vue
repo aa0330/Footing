@@ -56,9 +56,10 @@
         <li @click="() => { router.push('/dynamic_com') }">dynamic_com</li>
       </ul>
 
-      <div class="center_container">
+      <div class="center_container" ref="container">
 
       </div>
+      <button @click="changeInfo">click</button>
       <div class="right_container">
 
       </div>
@@ -76,6 +77,17 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router';
+
+const container = ref()
+console.log('container', container.value);
+const changeInfo = () => {
+  container.value.style.height = '800px'
+  container.value.style.width = '800px'
+  container.value.style.backgroundColor = 'black';
+  console.log('container', container.value.style);
+
+}
+
 
 const router = useRouter()
 
