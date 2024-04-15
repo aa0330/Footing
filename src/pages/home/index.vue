@@ -71,11 +71,10 @@
       <div ref="showText"></div>
     </div>
 
-
   </div>
 </template>
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive,onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 
 const container = ref()
@@ -85,8 +84,10 @@ const changeInfo = () => {
   container.value.style.width = '800px'
   container.value.style.backgroundColor = 'black';
   console.log('container', container.value.style);
-
 }
+onMounted(() => {
+    console.log('container', container.value);
+})
 
 
 const router = useRouter()
