@@ -68,6 +68,17 @@ function Random(start, length) {
     return Math.floor(Math.random() * (length - start)) + start;
 }
 
+/* */
+function myInstanceOf(left, right) {
+    if (typeof left !== 'object' || left == null) return false
+    let proto = Object.getPrototypeOf(left)
+    while (true) {
+        if (proto == null) return false;
+        if (proto === right.prototype) return true;
+        proto = Object.getPrototypeOf(proto);
+    }
+
+}
 
 
-export { debounce, throttle }
+export { debounce, throttle, Random }
