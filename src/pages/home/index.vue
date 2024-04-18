@@ -2,7 +2,7 @@
   <div class="home">
     <div class="navigation_bar">
       <ul class="left_box">
-        <li id="rotate_icon">
+        <li id="rotate_icon" @click="changeImg">
           <svg t="1710673979672" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
             p-id="4024" height="64">
             <path d="M115.7 115.6v394.8h394.8z" fill="#5CCFEA" p-id="4025"></path>
@@ -66,29 +66,45 @@
 
     </div>
 
-    <div class="main_box" style="margin: 80px;">
-      <p></p>
+    <div class="main_box" :style="{ backgroundImage: `url(${bgImg})` }">
       <div ref="showText"></div>
     </div>
-
+    <!-- <Icon iconName="icon--qiche" @handler="handler" /> -->
   </div>
 </template>
 <script setup>
-import { ref, reactive,onMounted } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
+import { Random } from '@/tools/toolFun.js'
+import Icon from '@/components/Icon_box/Icon.vue';
+import bg1 from '@/assets/images/bg1.jpg'
+import bg2 from '@/assets/images/bg2.jpg'
+import bg3 from '@/assets/images/bg3.jpg'
 
+const bgList = [bg1, bg2, bg3];
+const bgImg = ref()
 const container = ref()
-console.log('container', container.value);
 const changeInfo = () => {
   container.value.style.height = '800px'
   container.value.style.width = '800px'
   container.value.style.backgroundColor = 'black';
   console.log('container', container.value.style);
 }
+
 onMounted(() => {
-    console.log('container', container.value);
+  const random = Random(1, 4)
+  bgImg.value = bgList[random];
 })
 
+function handler(e) {
+  console.log(e);
+}
+
+const changeImg = () => {
+  const random = Random(1, 4)
+  console.log('random', random);
+  bgImg.value = bgList[random];
+}
 
 const router = useRouter()
 
@@ -110,7 +126,6 @@ function debounce(func, delay) {
     }, delay);
   }
 }
-
 
 
 
@@ -182,11 +197,12 @@ function debounce(func, delay) {
   }
 
   .main_box {
-    margin: 0 30px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-
+    margin: 0px;
+    height: 1000px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
   }
 
 }
