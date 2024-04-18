@@ -92,8 +92,7 @@ const changeInfo = () => {
 }
 
 onMounted(() => {
-  const random = Random(1, 4)
-  bgImg.value = bgList[random];
+  changeImg()
 })
 
 function handler(e) {
@@ -102,8 +101,10 @@ function handler(e) {
 
 const changeImg = () => {
   const random = Random(1, 4)
-  console.log('random', random);
-  bgImg.value = bgList[random];
+  console.log(random);
+  console.log('bgList[random]', bgList[random]);
+  bgImg.value = bgList[random - 1];
+
 }
 
 const router = useRouter()
@@ -164,16 +165,22 @@ function debounce(func, delay) {
   user-select: none;
 
   .navigation_bar {
+    position: relative;
     width: 100%;
     height: 64px;
+    background: rgba(255, 255, 255, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(198, 198, 198, 0.3);
+    // backdrop-filter: blur(5px) brightness(150%);
+    filter: blur(5px);
+    z-index: 5;
 
     .left_box {
       height: 64px;
       display: flex;
+      filter: none;
+      z-index: 99px;
       flex: column;
       list-style: none;
       margin: 0;
