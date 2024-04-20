@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script setup>
@@ -9,7 +7,7 @@
 </script>
 
 <style scoped lang="less">
-#app{
+#app {
   display: none;
 }
 </style>

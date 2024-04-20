@@ -64,9 +64,9 @@ function throttle(func, limit) {
  * @param {number} length 
  * @returns 
  */
-//               1      5
-function Random(start, end) {
-    return Math.floor(Math.random() * (end - start)) + start;
+//               1      
+function Random(start, length) {
+    return Math.floor(Math.random() * length) + start;
 }
 
 /* */

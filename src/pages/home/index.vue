@@ -1,73 +1,49 @@
 <template>
-  <div class="home">
-    <div class="navigation_bar">
-      <ul class="left_box">
-        <li id="rotate_icon" @click="changeImg">
-          <svg t="1710673979672" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            p-id="4024" height="64">
-            <path d="M115.7 115.6v394.8h394.8z" fill="#5CCFEA" p-id="4025"></path>
-            <path
-              d="M510.5 527.8H115.7c-9.6 0-17.4-7.8-17.4-17.4V115.6c0-7 4.2-13.4 10.8-16.1 6.5-2.7 14-1.2 19 3.8l394.8 394.8c5 5 6.5 12.5 3.8 19-2.8 6.5-9.2 10.7-16.2 10.7zM133.1 493h335.3L133.1 157.7V493z"
-              fill="#4C4848" p-id="4026"></path>
-            <path d="M115.7 905.2h394.8V510.4z" fill="#5CCFEA" p-id="4027"></path>
-            <path
-              d="M510.5 922.7H115.7c-7 0-13.4-4.2-16.1-10.8-2.7-6.5-1.2-14 3.8-19l394.8-394.8c5-5 12.5-6.5 19-3.8s10.8 9.1 10.8 16.1v394.8c-0.1 9.7-7.9 17.5-17.5 17.5z m-352.7-34.9h335.3V552.5L157.8 887.8z"
-              fill="#4C4848" p-id="4028"></path>
-            <path d="M905.3 905.2V510.4H510.5z" fill="#5CCFEA" p-id="4029"></path>
-            <path
-              d="M905.3 922.7c-4.5 0-9-1.8-12.3-5.1L498.2 522.7c-5-5-6.5-12.5-3.8-19s9.1-10.8 16.1-10.8h394.8c9.6 0 17.4 7.8 17.4 17.4v394.8c0 7-4.2 13.4-10.8 16.1-2.1 1-4.3 1.5-6.6 1.5zM552.6 527.8l335.3 335.3V527.8H552.6z"
-              fill="#4C4848" p-id="4030"></path>
-            <path d="M905.3 115.6H510.5v394.8z" fill="#5CCFEA" p-id="4031"></path>
-            <path
-              d="M510.5 527.8c-2.2 0-4.5-0.4-6.7-1.3-6.5-2.7-10.8-9.1-10.8-16.1V115.6c0-9.6 7.8-17.4 17.4-17.4h394.8c7 0 13.4 4.2 16.1 10.8 2.7 6.5 1.2 14-3.8 19L522.8 522.7c-3.3 3.4-7.8 5.1-12.3 5.1zM527.9 133v335.3L863.3 133H527.9z"
-              fill="#4C4848" p-id="4032"></path>
-            <path d="M510.5 115.6L313.1 313l197.4 197.4z" fill="#80D4EE" p-id="4033"></path>
-            <path
-              d="M510.5 527.8c-4.5 0-9-1.8-12.3-5.1L300.8 325.3c-6.8-6.8-6.8-17.8 0-24.6l197.4-197.4c5-5 12.5-6.5 19-3.8s10.8 9.1 10.8 16.1v394.8c0 7-4.2 13.4-10.8 16.1-2.2 0.9-4.5 1.3-6.7 1.3zM337.7 313L493 468.3V157.7L337.7 313z"
-              fill="#4C4848" p-id="4034"></path>
-            <path d="M115.7 510.4l197.4 197.4 197.4-197.4z" fill="#80D4EE" p-id="4035"></path>
-            <path
-              d="M313.1 725.2c-4.5 0-8.9-1.7-12.3-5.1L103.4 522.7c-5-5-6.5-12.5-3.8-19s9.1-10.8 16.1-10.8h394.8c7 0 13.4 4.2 16.1 10.8 2.7 6.5 1.2 14-3.8 19L325.4 720.1c-3.4 3.4-7.8 5.1-12.3 5.1zM157.8 527.8l155.3 155.3 155.3-155.3H157.8z"
-              fill="#4C4848" p-id="4036"></path>
-            <path d="M510.5 905.2l197.4-197.4-197.4-197.4z" fill="#80D4EE" p-id="4037"></path>
-            <path
-              d="M510.5 922.7c-2.2 0-4.5-0.4-6.7-1.3-6.5-2.7-10.8-9.1-10.8-16.1V510.4c0-7 4.2-13.4 10.8-16.1 6.5-2.7 14-1.2 19 3.8l197.4 197.4c3.3 3.3 5.1 7.7 5.1 12.3 0 4.6-1.8 9.1-5.1 12.3L522.8 917.6c-3.3 3.3-7.8 5.1-12.3 5.1z m17.4-370.2v310.7l155.3-155.3-155.3-155.4z"
-              fill="#4C4848" p-id="4038"></path>
-            <path d="M905.3 510.4L707.9 313 510.5 510.4z" fill="#80D4EE" p-id="4039"></path>
-            <path
-              d="M905.3 527.8H510.5c-7 0-13.4-4.2-16.1-10.8-2.7-6.5-1.2-14 3.8-19l197.4-197.4c6.8-6.8 17.8-6.8 24.6 0L917.6 498c5 5 6.5 12.5 3.8 19-2.7 6.6-9 10.8-16.1 10.8zM552.6 493h310.7L707.9 337.6 552.6 493z"
-              fill="#4C4848" p-id="4040"></path>
-            <path d="M510.5 510.4m-70.3 0a70.3 70.3 0 1 0 140.6 0 70.3 70.3 0 1 0-140.6 0Z" fill="#E45544" p-id="4041">
-            </path>
-            <path
-              d="M510.5 598.2c-48.4 0-87.8-39.4-87.8-87.8s39.4-87.8 87.8-87.8 87.8 39.4 87.8 87.8-39.4 87.8-87.8 87.8z m0-140.7c-29.2 0-52.9 23.7-52.9 52.9s23.7 52.9 52.9 52.9 52.9-23.7 52.9-52.9-23.7-52.9-52.9-52.9z"
-              fill="#4C4848" p-id="4042"></path>
-          </svg>
-        </li>
-        <li>首页</li>
-        <li @click="() => { router.push('/article') }">文章</li>
-        <li>番外</li>
-        <li @click="() => { router.push('/game') }">游戏</li>
-        <li @click="() => { router.push('/computed') }">计算属性</li>
-        <li @click="() => { router.push('/pinia') }">Pinia</li>
-        <li @click="() => { router.push('/watch') }">watch</li>
-        <li @click="() => { router.push('/inject') }">inject</li>
-        <li @click="() => { router.push('/interview') }">interview1</li>
-        <li @click="() => { router.push('/dynamic_com') }">dynamic_com</li>
-      </ul>
+  <div class="cf_home_container" :style="{ backgroundImage: `url(${bgImg})` }">
+    <div class="cf_navigation_bar">
+      <nav>
+        <ul>
+          <li @click="() => { router.push('/article') }">文章</li>
+          <li @click="() => { router.push('/article') }">游戏</li>
+          <li @click="() => { router.push('/article') }">关于</li>
+        </ul>
+      </nav>
+      <svg class="cf_bar_logo" aria-hidden="true">
+        <use xlink:href="#icon-cow"></use>
+      </svg>
 
-      <div class="center_container" ref="container">
-
-      </div>
-      <button @click="changeInfo">click</button>
-      <div class="right_container">
-
-      </div>
-
+      <!-- <button @click="changeInfo">click</button> -->
     </div>
 
-    <div class="main_box" :style="{ backgroundImage: `url(${bgImg})` }">
-      <div ref="showText"></div>
+    <div class="cf_main_box">
+      <div class="cf_mian_col_1">
+        <h1>ClickBelog</h1>
+        <p>
+          Until 2020, no other member state of the United Nations had ever officially recognized Moroccan sovereignty
+          over parts of Western Sahara.[14][15][16] In 2020, the United States recognized Moroccan sovereignty over
+          Western Sahara in exchange for Moroccan normalization of relations with
+          Israel.
+        </p>
+        <button type="button" @click="changeImg">Change WallPaper</button>
+      </div>
+      <div class="cf_mian_col_2">
+        <div class="cf_mian_card" :style="{ backgroundImage: `url(${bg1})` }">
+          <h5>如果你要旅游的话，你想去哪？</h5>
+          <p> no other member state of the United Nations had ever officially recognized</p>
+        </div>
+        <div class="cf_mian_card" :style="{ backgroundImage: `url(${bg2})` }">
+          <h5>文章</h5>
+          <p>no other member state of the United Nations had ever officially recognized</p>
+        </div>
+        <div class="cf_mian_card" :style="{ backgroundImage: `url(${bg3})` }">
+          <h5>Game</h5>
+          <p>no other member state of the United Nations had ever officially recognized</p>
+        </div>
+        <div class="cf_mian_card" :style="{ backgroundImage: `url(${bg4})` }">
+          <h5>剑客</h5>
+          <p>no other member state of the United Nations had ever officially recognized</p>
+        </div>
+      </div>
     </div>
     <!-- <Icon iconName="icon--qiche" @handler="handler" /> -->
   </div>
@@ -80,8 +56,13 @@ import Icon from '@/components/Icon_box/Icon.vue';
 import bg1 from '@/assets/images/bg1.jpg'
 import bg2 from '@/assets/images/bg2.jpg'
 import bg3 from '@/assets/images/bg3.jpg'
+import bg4 from '@/assets/images/bg4.jpg'
+import bg5 from '@/assets/images/bg5.jpg'
+import bg6 from '@/assets/images/bg6.jpg'
+import bg7 from '@/assets/images/bg7.jpg'
+import bg8 from '@/assets/images/bg8.jpg'
 
-const bgList = [bg1, bg2, bg3];
+const bgList = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8];
 const bgImg = ref()
 const container = ref()
 const changeInfo = () => {
@@ -100,11 +81,10 @@ function handler(e) {
 }
 
 const changeImg = () => {
-  const random = Random(1, 4)
-  console.log(random);
+  const random = Random(1, 7)
+  console.log('random', random);
   console.log('bgList[random]', bgList[random]);
-  bgImg.value = bgList[random - 1];
-
+  bgImg.value = bgList[random];
 }
 
 const router = useRouter()
@@ -117,7 +97,6 @@ function showInfo() {
   showText.value.innerHTML = inputText.value.value
 }
 
-
 function debounce(func, delay) {
   let timer = null;
   return function (...args) {
@@ -127,11 +106,6 @@ function debounce(func, delay) {
     }, delay);
   }
 }
-
-
-
-
-
 </script>
 
 <style scoped lang="less">
@@ -159,57 +133,123 @@ function debounce(func, delay) {
   }
 }
 
-.home {
+.cf_home_container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  background-position: center;
+  background-size: cover;
+  padding-left: 8%;
+  padding-right: 8%;
+  box-sizing: border-box;
+  overflow: hidden;
   user-select: none;
 
-  .navigation_bar {
-    position: relative;
-    width: 100%;
-    height: 64px;
-    background: rgba(255, 255, 255, 0.3);
+  .cf_navigation_bar {
+    height: 12%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    // backdrop-filter: blur(5px) brightness(150%);
-    filter: blur(5px);
-    z-index: 5;
 
-    .left_box {
-      height: 64px;
-      display: flex;
-      filter: none;
-      z-index: 99px;
-      flex: column;
-      list-style: none;
-      margin: 0;
+    .cf_bar_logo {
+      width: 50px;
+      height: 50px;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+      cursor: pointer;
     }
 
-    .left_box li {
-      line-height: 64px;
-      min-width: max-content;
-      text-align: center;
-      margin: 0 5%;
-      font-weight: 600;
+    nav {
+      flex: 1;
+      text-align: right;
+
+      li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 60px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 13px;
+      }
     }
 
-    .left_box li:hover {
-      animation: jump 0.15s linear;
+    .cf_menu-icon {
+      width: 30px;
+      cursor: pointer;
+      margin-left: 40px;
     }
 
-    #rotate_icon:hover {
-      animation: rotatei 1s linear;
-    }
   }
 
-  .main_box {
-    margin: 0px;
-    height: 1000px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;
+  .cf_main_box {
+    display: flex;
+    height: 88%;
+    align-items: center;
+
+    .cf_mian_col_1,
+    .cf_mian_col_2 {
+      flex-basis: 50%;
+    }
+
+    .cf_mian_col_1 {
+      h1 {
+        color: #fff;
+        font-size: 100px;
+      }
+
+      p {
+        color: #fff;
+        font-size: 11px;
+        line-height: 15px;
+      }
+
+      button {
+        width: 180px;
+        color: #000;
+        font-size: 12px;
+        padding: 12px 0;
+        background: #fff;
+        border: 0;
+        border-radius: 20px;
+        outline: none;
+        margin-top: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .cf_mian_col_2 {
+
+      .cf_mian_card {
+        width: 240px;
+        height: 230px;
+        display: inline-block;
+        border-radius: 10px;
+        padding: 15px 25px;
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 10px 15px;
+        background-position: center;
+        background-size: cover;
+        transition: transform 0.5s;
+
+        h5 {
+          color: #fff;
+          text-shadow: 0 0 8px #999;
+        }
+
+        p {
+          text-shadow: 0 0 5px #000;
+          font-size: 8px;
+        }
+
+      }
+
+      .cf_mian_card:hover {
+        transform: translateY(-10px);
+      }
+
+    }
+
   }
 
 }
