@@ -1,6 +1,9 @@
 <template>
   <div class="cf_home_container" :style="{ backgroundImage: `url(${bgImg})` }">
     <div class="cf_navigation_bar">
+      <svg class="cf_bar_logo" aria-hidden="true" @click="changLogo">
+        <use :xlink:href="logoName"></use>
+      </svg>
       <nav>
         <ul>
           <li @click="() => { router.push('/article') }">文章</li>
@@ -9,7 +12,7 @@
         </ul>
       </nav>
       <svg class="cf_bar_logo" aria-hidden="true">
-        <use xlink:href="#icon-cow"></use>
+        <use xlink:href="#icon-a-snakeanimal"></use>
       </svg>
 
       <!-- <button @click="changeInfo">click</button> -->
@@ -27,7 +30,7 @@
         <button type="button" @click="changeImg">Change WallPaper</button>
       </div>
       <div class="cf_mian_col_2">
-        <div class="cf_mian_card" :style="{ backgroundImage: `url(${bg1})` }">
+        <div class="cf_mian_card" :style="{ backgroundImage: `url(${bg8})` }">
           <h5>如果你要旅游的话，你想去哪？</h5>
           <p> no other member state of the United Nations had ever officially recognized</p>
         </div>
@@ -64,48 +67,34 @@ import bg8 from '@/assets/images/bg8.jpg'
 
 const bgList = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8];
 const bgImg = ref()
-const container = ref()
-const changeInfo = () => {
-  container.value.style.height = '800px'
-  container.value.style.width = '800px'
-  container.value.style.backgroundColor = 'black';
-  console.log('container', container.value.style);
+const changeImg = () => {
+  const random = Random(1, 7)
+  bgImg.value = bgList[random];
 }
+
+const logoList = ['icon-a-octopusanimal', 'icon-a-snakeanimal', 'icon-crab', 'icon-a-sharkanimal',
+  'icon-a-horseanimal', 'icon-a-monkeyanimal', 'icon-a-tigeranimal', 'icon-a-deeranimal', 'icon-a-chickenanimal',
+  'icon-a-penguinanimal', 'icon-a-elephantanimal', 'icon-a-eaglehawkanimal'
+]
+let logoName = ref()
+const changLogo = () => {
+  const random = Random(0, 10)
+  logoName.value = '#' + logoList[random]
+}
+
 
 onMounted(() => {
   changeImg()
+  changLogo()
 })
 
 function handler(e) {
   console.log(e);
 }
 
-const changeImg = () => {
-  const random = Random(1, 7)
-  console.log('random', random);
-  console.log('bgList[random]', bgList[random]);
-  bgImg.value = bgList[random];
-}
 
 const router = useRouter()
 
-let inputText = ref();
-let showText = ref()
-
-function showInfo() {
-  console.log('执行！！！');
-  showText.value.innerHTML = inputText.value.value
-}
-
-function debounce(func, delay) {
-  let timer = null;
-  return function (...args) {
-    if (timer != null) clearTimeout(timer);
-    timer = setTimeout(function () {
-      func.apply(this, args)
-    }, delay);
-  }
-}
 </script>
 
 <style scoped lang="less">
