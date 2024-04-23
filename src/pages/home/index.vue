@@ -38,7 +38,7 @@
           <h5>文章</h5>
           <p>no other member state of the United Nations had ever officially recognized</p>
         </div>
-        <div class="cf_mian_card" :style="{ backgroundImage: `url(${bg3})` }">
+        <div class="cf_mian_card" :style="{ backgroundImage: `url(${bg3})` }" @click="() => { router.push('/game') }">
           <h5>Game</h5>
           <p>no other member state of the United Nations had ever officially recognized</p>
         </div>
