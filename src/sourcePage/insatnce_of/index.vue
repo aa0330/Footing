@@ -7,7 +7,7 @@
 <script setup>
 
 function instanceOf(a, b) {
-    if (typeof a !== 'object' && typefo b !== 'funcction') return false;
+    if (typeof a !== 'object' && typeof b !== 'function') return false;
     a = a ? a.__proto__ : null
     while(true){
         if(a===null) return false;
