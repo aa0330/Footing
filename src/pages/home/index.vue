@@ -1,5 +1,5 @@
 <template>
-  <div class="cf_home_container" :style="{ backgroundImage: `url(${bgImg})` }">
+  <div class="cf_home_container" ref="container" :style="{ backgroundImage: `url(${bgImg})` }">
     <div class="cf_navigation_bar">
       <svg class="cf_bar_logo" aria-hidden="true" @click="changLogo">
         <use :xlink:href="logoName"></use>
@@ -65,6 +65,12 @@ import bg6 from '@/assets/images/bg6.jpg'
 import bg7 from '@/assets/images/bg7.jpg'
 import bg8 from '@/assets/images/bg8.jpg'
 
+// created(()=>{
+//   const container =ref()
+//   console.log('aaaaa',container);
+  
+// })
+
 const bgList = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8];
 const bgImg = ref()
 const changeImg = () => {
@@ -76,6 +82,7 @@ const logoList = ['icon-a-octopusanimal', 'icon-a-snakeanimal', 'icon-crab', 'ic
   'icon-a-horseanimal', 'icon-a-monkeyanimal', 'icon-a-tigeranimal', 'icon-a-deeranimal', 'icon-a-chickenanimal',
   'icon-a-penguinanimal', 'icon-a-elephantanimal', 'icon-a-eaglehawkanimal'
 ]
+
 let logoName = ref()
 const changLogo = () => {
   const random = Random(0, 10)
@@ -84,6 +91,7 @@ const changLogo = () => {
 
 
 onMounted(() => {
+  console.log('onMounted');
   changeImg()
   changLogo()
 })
