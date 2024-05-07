@@ -15,7 +15,7 @@ const routes = [
     {
         path: '/test',
         component: () => import('@/components/info_box/index.vue')
-    }, 
+    },
     {
         path: '/game',
         component: () => import('@/pages/games/index.vue')
@@ -65,6 +65,11 @@ const routes = [
         path: '/article',
         name: 'article',
         component: () => import('@/pages/article/index.vue')
+    }, {
+
+        path: '/slot',
+        name: 'slot',
+        component: () => import('@/pages/slot/index.vue')
     }
 ]
 
